@@ -1,0 +1,11 @@
+version: "2.0"
+
+services:
+  web:
+    build: .
+    command: python /usr/src/django_projects/test_car/car/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/usr/src/django_projects/test_car/car/
+    ports:
+      - "8000:8000"
+      - "5432:5432"
